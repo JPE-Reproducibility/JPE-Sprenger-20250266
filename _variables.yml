@@ -1,6 +1,12 @@
-title: "Stand-in title"
-author: "Dr Prof James 'JayJay' Author"
-paper_id: 12345678
+title: "Connecting Common Ratio and Common Consequence Preferences"
+author: "Sprenger"
 round: 1
-repo: "https://www.github.com/standin"
-dropbox_rel_path: "JPE/Author-12345678/1"
+repo: "https://github.com/JPE-Reproducibility/JPE-Sprenger-20250266"
+paper_id: 20250266
+journal: "JPE"
+paper_slug: "Sprenger-20250266"
+dropbox_download_url: "https://www.dropbox.com/scl/fo/tjdy1ewzcbase1e25f6i7/AHM0as5AvvMrKtpq950XbXU?rlkey=yf4ny4uu0bmf3mborncoycq70&dl=1"
+dropbox_rel_path: "JPE/Sprenger-20250266/1"
+package_size_gb: 0.01
+package_max_file_size_gb: 2
+package_max_pkg_size_gb: 10
