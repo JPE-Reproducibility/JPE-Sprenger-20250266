@@ -1,33 +1,27 @@
 ## Appendix: Detailed PII Detection Results
 
-*Generated on 2026-03-19 18:43:42*
+*Generated on 2026-04-15 19:47:07*
 
 This appendix lists all detected instances of potential personally identifiable information (PII) in the project files. Each entry shows the matched PII terms and, for data files, sample values to help verify whether the flagged content is indeed sensitive.
 
 ### Data Files
 
-**/replication-package/replication_files/README.txt**
+**/replication-package/replication_filesv2/README.txt**
 
 - Variable: `- Published-Blat-CCE-data-2022-AEJMicro_csv`
   - Matched terms: lat
   - Sample values: as published., then saved to CSV.
 
-**/replication-package/replication_files/raw-data/demographics-anonymized.csv**
+**/replication-package/replication_filesv2/raw-data/demographics-anonymized.csv**
 
-- Variable: `countryofbirth`
-  - Matched terms: birth, country
-  - Sample values: Portugal, United States, United Kingdom
 - Variable: `countryofresidence`
   - Matched terms: country
   - Sample values: Portugal, United States, United Kingdom
-- Variable: `ethnicitysimplified`
-  - Matched terms: city
-  - Sample values: White, Asian, Mixed
 - Variable: `sex`
   - Matched terms: sex
   - Sample values: Male, Female
 
-**/replication-package/replication_files/raw-data/qualtrics-raw.csv**
+**/replication-package/replication_filesv2/raw-data/qualtrics-raw.csv**
 
 - Variable: `blockpaid`
   - Matched terms: block, loc
@@ -38,7 +32,7 @@ This appendix lists all detected instances of potential personally identifiable 
 
 ### Code Files
 
-**/replication-package/replication_files/R/functions.R**
+**/replication-package/replication_filesv2/R/functions.R**
 
 - Line 10: lat
   ```
@@ -85,11 +79,15 @@ This appendix lists all detected instances of potential personally identifiable 
   #### and a subject's first stage responses and calculates
   ```
 
-**/replication-package/replication_files/R/mainR.R**
+**/replication-package/replication_filesv2/R/mainR.R**
 
 - Line 9: lat
   ```
   ##### 2. Performing Calculation and ML Estimation
+  ```
+- Line 19: son
+  ```
+  dir <- "/Users/jasonsomerville/Desktop/CRP CCP BP/replication_files"
   ```
 - Line 32: name
   ```
@@ -112,14 +110,14 @@ This appendix lists all detected instances of potential personally identifiable 
   "main.R finished.\nStart: %s\nEnd:   %s\nElapsed: %.2f seconds (%.2f minutes)\n",
   ```
 
-**/replication-package/replication_files/R/makeFigureD1.R**
+**/replication-package/replication_filesv2/R/makeFigureD1.R**
 
 - Line 6: lat
   ```
   #### Figure Relating MLE and Calculated Values
   ```
 
-**/replication-package/replication_files/R/makeTableD1.R**
+**/replication-package/replication_filesv2/R/makeTableD1.R**
 
 - Line 11: lat
   ```
@@ -134,7 +132,7 @@ This appendix lists all detected instances of potential personally identifiable 
   caption = "Decomposition Calculations (Levels)\\label{apptab:TableD1}"
   ```
 
-**/replication-package/replication_files/R/makeTableD2.R**
+**/replication-package/replication_filesv2/R/makeTableD2.R**
 
 - Line 11: lat
   ```
@@ -149,7 +147,7 @@ This appendix lists all detected instances of potential personally identifiable 
   caption = "Decomposition Calculations (Differences)\\label{apptab:TableD2}"
   ```
 
-**/replication-package/replication_files/R/reducedForm.R**
+**/replication-package/replication_filesv2/R/reducedForm.R**
 
 - Line 4: lon
   ```
@@ -260,8 +258,12 @@ This appendix lists all detected instances of potential personally identifiable 
   remove(list=ls(pattern="calculations"))
   ```
 
-**/replication-package/replication_files/matlab/makeFigure1.m**
+**/replication-package/replication_filesv2/matlab/makeFigure1.m**
 
+- Line 7: son
+  ```
+  dir = "/Users/jasonsomerville/Desktop/CRP CCP BP/replication_files"; %Set directory
+  ```
 - Line 20: lat
   ```
   set(groot,'defaultAxesTickLabelInterpreter','latex');
@@ -327,8 +329,12 @@ This appendix lists all detected instances of potential personally identifiable 
   lgd=legend({'CR Study','CC Study'},'Location','southoutside','NumColumns',3,'FontSize',14,'Interpret
   ```
 
-**/replication-package/replication_files/matlab/makeFigure9.m**
+**/replication-package/replication_filesv2/matlab/makeFigure9.m**
 
+- Line 7: son
+  ```
+  dir = "/Users/jasonsomerville/Desktop/CRP CCP BP/replication_files"; %Set directory
+  ```
 - Line 18: name
   ```
   caseName = cases{z};  % 'I1', 'I2', 'I3', 'I4', or 'I5'
@@ -366,8 +372,12 @@ This appendix lists all detected instances of potential personally identifiable 
   % Export file named by case
   ```
 
-**/replication-package/replication_files/matlab/makeFigureE1.m**
+**/replication-package/replication_filesv2/matlab/makeFigureE1.m**
 
+- Line 7: son
+  ```
+  dir = "/Users/jasonsomerville/Desktop/CRP CCP BP/replication_files"; %Set directory
+  ```
 - Line 44: lat
   ```
   text(12,130, '$\kappa(qX) < q^2\kappa(X)$', 'Interpreter','latex', 'Color','k','fontsize', 14);
@@ -405,8 +415,12 @@ This appendix lists all detected instances of potential personally identifiable 
   set(gca, 'YTickLabel', {'$\kappa(X)$'}, 'TickLabelInterpreter', 'latex');
   ```
 
-**/replication-package/replication_files/matlab/structuralEstimates.m**
+**/replication-package/replication_filesv2/matlab/structuralEstimates.m**
 
+- Line 7: son
+  ```
+  dir = "/Users/jasonsomerville/Desktop/CRP CCP BP/replication_files"; %Set directory
+  ```
 - Line 88: name
   ```
   UPspec(1).name     = "UP_flex2";
@@ -624,7 +638,7 @@ This appendix lists all detected instances of potential personally identifiable 
   fprintf(fid,'Degrees of Freedom');
   ```
 
-**/replication-package/replication_files/stata/clean_data.do**
+**/replication-package/replication_filesv2/stata/clean_data.do**
 
 - Line 23: block, loc, son
   ```
@@ -758,108 +772,96 @@ This appendix lists all detected instances of potential personally identifiable 
   ```
   label var sex "Sex/gender category; gender-balanced recruitment."
   ```
-- Line 368: city, lat
-  ```
-  label var ethnicitysimplified "Simplified ethnicity category (platform metadata)."
-  ```
-- Line 369: birth, country, lat
-  ```
-  label var countryofbirth "Country of birth (platform metadata)."
-  ```
-- Line 370: country, lat
+- Line 368: country, lat
   ```
   label var countryofresidence "Current residence; eligibility US or Western Europe (platform metadata
   ```
-- Line 371: lat
-  ```
-  label var nationality "Nationality (platform metadata)."
-  ```
-- Line 372: lat
+- Line 369: lat
   ```
   label var language "Primary language / language of participation (platform metadata)."
   ```
-- Line 373: lat
+- Line 370: lat
   ```
   label var studentstatus "Student status (platform metadata)."
   ```
-- Line 374: lat
+- Line 371: lat
   ```
   label var employmentstatus "Employment status (platform metadata)."
   ```
-- Line 375: son
+- Line 372: son
   ```
   label var personpaid "Indicator selected for performance-based bonus (1 in 5 selected)."
   ```
-- Line 388: name
+- Line 385: name
   ```
   tempname fh
   ```
-- Line 394: loc
+- Line 391: loc
   ```
   local def : variable label `v'
   ```
-- Line 396: loc
+- Line 393: loc
   ```
   local def = subinstr(`"`def'"', `"""', `"""""', .)
   ```
-- Line 424: name
+- Line 421: name
   ```
   rename real1orhypothetical0incentives real
   ```
-- Line 441: name
+- Line 438: name
   ```
   * Rename and save
   ```
-- Line 442: name
+- Line 439: name
   ```
   rename (CR RCR) (effect reverse_effect)
   ```
-- Line 444: lat
+- Line 441: lat
   ```
   save Blat_CRE_data.dta, replace
   ```
-- Line 471: name
+- Line 468: name
   ```
   * Rename and save
   ```
-- Line 472: name
+- Line 469: name
   ```
   rename (CC RCC) (effect reverse_effect)
   ```
-- Line 474: lat
+- Line 471: lat
   ```
   save Blat_CCE_data, replace
   ```
-- Line 487: name
+- Line 484: name
   ```
   rename (p_condition r_condition) (p r)
   ```
-- Line 529: name
+- Line 526: name
   ```
   tempname fh
   ```
-- Line 535: loc
+- Line 532: loc
   ```
   local def : variable label `v'
   ```
-- Line 536: loc
+- Line 533: loc
   ```
   if `"`def'"' == "" local def "(no definition provided)"
   ```
-- Line 538: loc
+- Line 535: loc
   ```
   local def = subinstr(`"`def'"', `"""', `"""""', .)
   ```
-- Line 550: lat
+- Line 547: lat
   ```
   mi erase Blat_CRE_data
   ```
-- Line 551: lat
+- Line 548: lat
   ```
   mi erase Blat_CCE_data
   ```
 
-**/replication-package/replication_files/stata/mainS.do**
+**/replication-package/replication_filesv2/stata/mainS.do**
 
 - Line 7: second
   ```
@@ -867,7 +869,7 @@ This appendix lists all detected instances of potential personally identifiable 
   ```
 - Line 11: loc
   ```
-  local folder "Desktop/replication_files" // update based on local directory (e.g. Desktop/replicatio
+  local folder "Desktop/CRP CCP BP/replication_files" // update based on local directory (e.g. Desktop
   ```
 - Line 12: name
   ```
@@ -882,7 +884,7 @@ This appendix lists all detected instances of potential personally identifiable 
   display (clock(t2, "hms") - clock(t1, "hms")) / 1000 " second(s)"
   ```
 
-**/replication-package/replication_files/stata/makeAppendixFigures.do**
+**/replication-package/replication_filesv2/stata/makeAppendixFigures.do**
 
 - Line 53: loc
   ```
@@ -965,7 +967,7 @@ This appendix lists all detected instances of potential personally identifiable 
   local bottom : word `k' of `bottom_label'
   ```
 
-**/replication-package/replication_files/stata/makeAppendixTables.do**
+**/replication-package/replication_filesv2/stata/makeAppendixTables.do**
 
 - Line 10: lat
   ```
@@ -1376,7 +1378,7 @@ This appendix lists all detected instances of potential personally identifiable 
   estadd local space " ": temp4
   ```
 
-**/replication-package/replication_files/stata/makeFigures3-7.do**
+**/replication-package/replication_filesv2/stata/makeFigures3-7.do**
 
 - Line 24: loc
   ```
@@ -1551,7 +1553,7 @@ This appendix lists all detected instances of potential personally identifiable 
   local bottom : word `k' of `bottom_label'
   ```
 
-**/replication-package/replication_files/stata/makeTable2.do**
+**/replication-package/replication_filesv2/stata/makeTable2.do**
 
 - Line 22: lat
   ```
@@ -1590,7 +1592,7 @@ This appendix lists all detected instances of potential personally identifiable 
   rename (gap allais_values) (gap1 gap)   // rename so that esttab produces single rows
   ```
 
-**/replication-package/replication_files/stata/statsInText.do**
+**/replication-package/replication_filesv2/stata/statsInText.do**
 
 - Line 44: son
   ```

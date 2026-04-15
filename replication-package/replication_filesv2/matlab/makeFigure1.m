@@ -4,7 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 clear; close all;
-dir = "..."; %Set directory
+dir = "/Users/jasonsomerville/Desktop/CRP CCP BP/replication_files"; %Set directory
 cd(dir)
 blue=[0,114,178]./255;
 red=[178,34,34]./255;

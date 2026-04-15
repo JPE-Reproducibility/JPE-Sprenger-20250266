@@ -16,7 +16,7 @@ script_start_time <- Sys.time()
 
 #### Set Results, File, and Data Paths (Change Path Accordingly)
 #### 1. Setting Libraries and Reading in Data ----
-dir <- "..."
+dir <- "/Users/jasonsomerville/Desktop/CRP CCP BP/replication_files"
 tables   <- file.path(dir, "tables")
 figures  <- file.path(dir, "figures")
 filepath <- file.path(dir, "R")

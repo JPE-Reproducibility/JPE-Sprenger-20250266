@@ -8,7 +8,7 @@
  Last edited: 01/19/2026                                                
 ***************************************************************************************************/
 *(A) Paths + Settings
-	local folder "Desktop/replication_files" // update based on local directory (e.g. Desktop/replication_files)
+	local folder "Desktop/CRP CCP BP/replication_files" // update based on local directory (e.g. Desktop/replication_files)
 	global user  "`c(username)'"
 	if "`c(os)'" == "Windows" {
 		global dir "C:/Users/$user/`folder'"	

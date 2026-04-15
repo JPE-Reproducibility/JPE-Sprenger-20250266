@@ -193,27 +193,27 @@ Figure list:
 
 	local emdash = ustrunescape("\u2013")
 	
-	* h_ab
+	* Panel A: h_ab (value differences)
 	binscatter PrA_AB diff_ab,  nquantiles(100)  color(green%30) xsize(6) ysize(5.5) ytitle("Pr(A|AB)") xlabel(-40(10)40) xtitle("Value Difference: p (h{sub:AB} `emdash' stage 2 H)")  yline(0.5, lc(black%50) lp(dash)) xline(0.5, lc(black%50) lp(dash))  ylabel(0(0.25)1, format(%9.2f))  line(none) legend(off)
 	graph export "$figures/FigureA4a.pdf", replace
-	
-	* h_ab_star
-	binscatter PrA_AB diff_ab_star,  nquantiles(100)  color(green%60) xsize(6) ysize(5.5)  ytitle("Pr(A|AB)") xlabel(-40(10)40) xtitle("Decomposed Preferences: p (E[h{sup:*}{sub:AB}|stage 1] `emdash' stage 2 H)")  yline(0.5, lc(black%50) lp(dash)) xline(0.5, lc(black%50) lp(dash))  ylabel(0(0.25)1, format(%9.2f))  line(none) legend(off)
+
+	* Panel B: h_ab_prime (value differences)
+	binscatter PrA_AB_prime diff_ab_prime,  nquantiles(100)  color(gold%30) xsize(6) ysize(5.5) ytitle("Pr(A|AB')") xlabel(-40(10)40) xtitle("Value Difference: p (h{sub:AB'} `emdash' stage 2 H)")  yline(0.5, lc(black%50) lp(dash)) xline(0.5, lc(black%50) lp(dash))  ylabel(0(0.25)1, format(%9.2f))  line(none) legend(off)
 	graph export "$figures/FigureA4b.pdf", replace
 
-	* h_ab_prime
-	binscatter PrA_AB_prime diff_ab_prime,  nquantiles(100)  color(gold%30) xsize(6) ysize(5.5) ytitle("Pr(A|AB')") xlabel(-40(10)40) xtitle("Value Difference: p (h{sub:AB'} `emdash' stage 2 H)")  yline(0.5, lc(black%50) lp(dash)) xline(0.5, lc(black%50) lp(dash))  ylabel(0(0.25)1, format(%9.2f))  line(none) legend(off)
+	* Panel C: h_cd (value differences)
+	binscatter PrC_CD diff_cd,  nquantiles(100)  color(navy%30) xsize(6) ysize(5.5) ytitle("Pr(C|CD)") xlabel(-40(10)40) xtitle("Value Difference: p (h{sub:CD} `emdash' stage 2 H)")  yline(0.5, lc(black%50) lp(dash)) xline(0.5, lc(black%50) lp(dash))  ylabel(0(0.25)1, format(%9.2f))  line(none) legend(off)
 	graph export "$figures/FigureA4c.pdf", replace
-	
-	* h_ab_prime_star
-	binscatter PrA_AB_prime diff_ab_prime_star,  nquantiles(100)  color(gold%60) xsize(6) ysize(5.5) ytitle("Pr(A|AB')") xlabel(-40(10)40) xtitle("Decomposed Preferences: p (E[h{sup:*}{sub:AB'}|stage 1] `emdash' stage 2 H)")  yline(0.5, lc(black%50) lp(dash)) xline(0.5, lc(black%50) lp(dash))  ylabel(0(0.25)1, format(%9.2f))  line(none) legend(off)
+
+	* Panel D: h_ab_star (decomposed preferences)
+	binscatter PrA_AB diff_ab_star,  nquantiles(100)  color(green%60) xsize(6) ysize(5.5)  ytitle("Pr(A|AB)") xlabel(-40(10)40) xtitle("Decomposed Preferences: p (E[h{sup:*}{sub:AB}|stage 1] `emdash' stage 2 H)")  yline(0.5, lc(black%50) lp(dash)) xline(0.5, lc(black%50) lp(dash))  ylabel(0(0.25)1, format(%9.2f))  line(none) legend(off)
 	graph export "$figures/FigureA4d.pdf", replace
 
-	* h_cd
-	binscatter PrC_CD diff_cd,  nquantiles(100)  color(navy%30) xsize(6) ysize(5.5) ytitle("Pr(C|CD)") xlabel(-40(10)40) xtitle("Value Difference: p (h{sub:CD} `emdash' stage 2 H)")  yline(0.5, lc(black%50) lp(dash)) xline(0.5, lc(black%50) lp(dash))  ylabel(0(0.25)1, format(%9.2f))  line(none) legend(off)
+	* Panel E: h_ab_prime_star (decomposed preferences)
+	binscatter PrA_AB_prime diff_ab_prime_star,  nquantiles(100)  color(gold%60) xsize(6) ysize(5.5) ytitle("Pr(A|AB')") xlabel(-40(10)40) xtitle("Decomposed Preferences: p (E[h{sup:*}{sub:AB'}|stage 1] `emdash' stage 2 H)")  yline(0.5, lc(black%50) lp(dash)) xline(0.5, lc(black%50) lp(dash))  ylabel(0(0.25)1, format(%9.2f))  line(none) legend(off)
 	graph export "$figures/FigureA4e.pdf", replace
-	
-	* h_cd star
+
+	* Panel F: h_cd_star (decomposed preferences)
 	binscatter PrC_CD diff_cd_star,  nquantiles(100)  color(navy%60) xsize(6) ysize(5.5) ytitle("Pr(C|CD)") xlabel(-40(10)40) xtitle("Decomposed Preferences: p (E[h{sup:*}{sub:CD}|stage 1] `emdash' stage 2 H)")  yline(0.5, lc(black%50) lp(dash)) xline(0.5, lc(black%50) lp(dash))  ylabel(0(0.25)1, format(%9.2f))  line(none) legend(off)
 	graph export "$figures/FigureA4f.pdf", replace
 	

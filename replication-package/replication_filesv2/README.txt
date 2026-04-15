@@ -1,7 +1,7 @@
-README for "Connecting Common Ratio and Common Consequence Preferences"
-Christina McGranaghan, Kirby Nielsen, Ted O’Donoghue, Jason Somerville, and Charles Sprenger
+Data and Code for: Connecting Common Ratio and Common Consequence Preferences
+Christina McGranaghan (University of Delaware), Kirby Nielsen (California Institute of Technology), Ted O’Donoghue (Cornell University), Jason Somerville (University of California, Santa Barbara), and Charles D. Sprenger (California Institute of Technology)
 Manuscript #: 20250266
-Last updated: January 18, 2026
+Last updated: April 6, 2026
 
 
 OVERVIEW
@@ -39,6 +39,9 @@ Included vs. excluded datasets
 Statement about Rights
 [X] I certify that the author(s) of the manuscript have legitimate access to and permission to use the data used in this manuscript.
 [X] I certify that the author(s) of the manuscript have documented permission to redistribute/publish the data contained within this replication package. Any permissions are documented in LICENSE.txt.
+
+Informed Consent and Data Distribution
+All participants provided informed consent prior to participation. The consent form (included in experimental-materials/screenshots.pdf) states: "Your individual privacy will be maintained in all published and written data resulting from the study." For participants in the European Economic Area, the consent form further states: "Even if you withdraw your consent, we may still use your data that has been anonymized or pseudonymized so that the data does not identify you, as permitted by applicable law for the purposes of: (a) the public interest, (b) scientific research, and (c) archiving in the public interest." All data included in this package are fully anonymized: Prolific IDs have been removed and replaced with anonymous response identifiers, and no names, emails, IP addresses, or other direct identifiers are present.
 
 Summary of Availability
 [X] All data are publicly available.
@@ -420,9 +423,13 @@ Appendices
 REFERENCES (including data citations)
 
 Blavatskyy, P., Ortmann, A., & Panchenko, V. (2022). On the experimental robustness of the Allais paradox.
-American Economic Journal: Microeconomics, 14(1), 143–163.
+American Economic Journal: Microeconomics, 14(1), 143–163. https://doi.org/10.1257/mic.20200216
+  Data file derived from this source: Published-Blat-CCE-data-2022-AEJMicro.csv (transcribed from Table 1
+  by the authors of this replication package; see "Details on each Data Source" above).
 
 Blavatskyy, P., Panchenko, V., & Ortmann, A. (2023). How common is the common-ratio effect?
-Experimental Economics, 26(2), 253–272.
+Experimental Economics, 26(2), 253–272. https://doi.org/10.1007/s10683-022-09756-9
+  Data file derived from this source: Published-Blat-CRE-data-2022-EE.csv (transcribed from Table 1
+  by the authors of this replication package, with corrections documented above).
 
 (Primary data) Author-collected online experiment programmed in Qualtrics and administered to participants recruited on Prolific (October 5, 2022; see experimental documentation in experimental-materials/ and the pre-registration listed above). Raw data: raw-data/qualtrics-raw.csv and raw-data/demographics-anonymized.csv.

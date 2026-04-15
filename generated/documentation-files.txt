@@ -1,4 +1,2 @@
-/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20250266-1/replication-package/__MACOSX/replication_files/experimental-materials/._irb-approval.pdf
-/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20250266-1/replication-package/__MACOSX/replication_files/experimental-materials/._screenshots.pdf
-/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20250266-1/replication-package/replication_files/experimental-materials/irb-approval.pdf
-/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20250266-1/replication-package/replication_files/experimental-materials/screenshots.pdf
+/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20250266-2/replication-package/replication_filesv2/experimental-materials/irb-approval.pdf
+/var/folders/5q/yhcyv3z55wvg6lhgc3h22kk00000gq/T/20250266-2/replication-package/replication_filesv2/experimental-materials/screenshots.pdf
