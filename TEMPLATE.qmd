@@ -128,9 +128,9 @@ In assessing compliance with our [Data and Code Availability Policy](https://www
   - Created from tables included in previously published journal papers.
   - Included in the data section to match the README
 - [x] Data are not cited, but a working paper, article, or other document is cited (not a data citation)
-- [ ] Data are cited
-  - [ ] in the manuscript
-  - [ ] in the README
+- [x] Data are cited
+  - [x] in the manuscript
+  - [x] in the README
 
 > Blavatskyy, P., Ortmann, A., & Panchenko, V. (2022). On the experimental robustness of the Allais paradox. American Economic Journal: Microeconomics, 14(1), 143–163.
 
@@ -143,32 +143,25 @@ In assessing compliance with our [Data and Code Availability Policy](https://www
   - Created from tables included in previously published journal papers. Authors made minor corrections that are described in the README.
   - Included in the data section to match the README
 - [x] Data are not cited, but a working paper, article, or other document is cited (not a data citation)
-- [ ] Data are cited
-  - [ ] in the manuscript
-  - [ ] in the README
+- [x] Data are cited
+  - [x] in the manuscript
+  - [x] in the README
 
 > Blavatskyy, P., Panchenko, V., & Ortmann, A. (2023). How common is the common-ratio effect? Experimental Economics, 26(2), 253–272.
 
 
 # Requirements 
-
-> {REPLICATOR}: Check that these requirements are met. 
-
 - [x] README is in TXT, MD, or PDF format
 - [x] README is accessible at the root of the package (not inside a folder)
-- [ ] Title conforms to guidance (starts with "Data and Code for: Title of Paper" or "Code for: Title of Paper", is properly capitalized)
-- [ ] Authors (with affiliations) are listed in the same order as on the paper
-
-> {REQUIRED} Please review the title of the deposit as per our guidelines.
-
-> {REQUIRED} Please review authors and affiliations on the deposit. In general, they are the same, and in the same order, as for the manuscript; however, authors can deviate from that order.
-
+- [x] Title conforms to guidance (starts with "Data and Code for: Title of Paper" or "Code for: Title of Paper", is properly capitalized)
+- [x] Authors (with affiliations) are listed in the same order as on the paper
 
 ## Stated Requirements
 
 - [ ] No requirements specified
 - [x] Software Requirements specified as follows:
   - Stata MP 19.5
+    - Stata Packages: estout, unique, binscatter
   - Matlab: 25.1.0.2943329 (R2025a)
   - R version 4.5.1
     - R packages: stats4, mvtnorm, dplyr, kableExtra
@@ -203,8 +196,6 @@ In assessing compliance with our [Data and Code Availability Policy](https://www
 - There are six provided R files, four main and 11 function Matlab .m files, and 7 stata .do files
 - Table 1, Table 3 and Figure 2 were made by the authors directly. There is no corresponding code file
 - In-text numbers are not listed in the README, but a .do file is provided to replicate.
-
-> NOTE: In-text numbers that reference numbers in tables do not need to be listed. Only in-text numbers that correspond to no table or figure need to be listed.
 
 ## Computing Environment of the Replicator
 
@@ -259,7 +250,7 @@ local folder "Desktop/replication_files" // update based on local directory (e.g
 ```
 with
 ```Stata
-global dir "/files/JPE-Sprenger-20250266/replication-package/replication_files"
+global dir "/files/JPE-Sprenger-20250266/replication-package/replication_filesv2"
 ```
 - Stata output ran with no other changes.
 - Ran Matlab code as per instructions after changing directories. Worked without any further inputs.
@@ -267,88 +258,102 @@ global dir "/files/JPE-Sprenger-20250266/replication-package/replication_files"
 
 # Findings {#sec-findings}
 - All outputs were reproduced. No code was provided for Table 1, Figure 2, and Table 3 since these were not computations.
-- Minor issues in the README with missing affiliations and discrepancy in title.
-- Tables D1, D2 and Figure D1 had different numbers for certain parameters (error was < 1.0)
-- For data taken from published papers, only the paper is cited and not the data.
+- Tables D1, D2 and Figure D1 had different numbers for certain parameters (error was < 1.0, probably a computational issue)
 - Data includes Personally Identifiable Information (PII) but PII has been anonymized to prevent identification. IRB approval included in the replication package.
-
-## Data Preparation Code
-
-Examples:
-
-- Program `clean_data.do` ran without error, output expected data
 
 ## Tables and Figures
 
-| Data Preparation Program | Dataset created                          | Reproduced? |  | Figure/Table # | Program                      | Line Number | Reproduced? |  | In-text claim                                                    | Program        | Line Nuumber | Reproduced? |
-|--------------------------|------------------------------------------|-------------|--|----------------|------------------------------|-------------|-------------|--|------------------------------------------------------------------|----------------|--------------|-------------|
-| clean_data.do            | cleaned-data/ExperimentData.dta and .csv | yes         |  | Table 1        | Made by Authors              | N/A         | N/A         |  | p. 11: 48 (34%) of 143 CR experiments use KT parameters          | statsInText.do | 20           | Yes         |
-| clean_data.do            | cleaned-data/demographics.dta and .csv   | yes         |  | Table 2        | stata/makeTable2.do          | 91          | Yes         |  | p. 11: 34 (42%) of 81 CC experiments use Allais parameters       | statsInText.do | 20           | Yes         |
-| clean_data.do            | cleaned-data/part1_cleaned.dta and .csv  | yes         |  | Table 3        | Made by Authors              | N/A         | N/A         |  | p. 19: Average bonus payment $15.76                              | statsInText.do | 20           | Yes         |
-| clean_data.do            | cleaned-data/part2_cleaned.dta and .csv  | yes         |  | Figure 1       | matlab/makeFigure1.m         | 133         | Yes         |  | p. 24: 21.0% of observations exhibit CR+CC                       | statsInText.do | 37           | Yes         |
-| clean_data.do            | cleaned-data/[dataset]_definitions.csv   | yes         |  | Figure 2       | Made by Authors              | N/A         | N/A         |  | p. 24: 14.6% exhibit modal pattern                               | statsInText.do | 47           | Yes         |
-|                          |                                          |             |  | Figure 3       | stata/makeFigures3–7.do      | 16          | Yes         |  | p. 24 (fn 31): 28.9% exhibit CR+CC near canonical parameters     | statsInText.do | 47           | Yes         |
-|                          |                                          |             |  | Figure 4       | stata/makeFigures3–7.do      | 37          | Yes         |  | p. 24 (fn 31): 13.9% exhibit CR-RCC-MX near canonical parameters | statsInText.do | 47           | Yes         |
-|                          |                                          |             |  | Figure 5       | stata/makeFigures3–7.do      | 64          | Yes         |  | p. 24 (fn 31): 21.4% exhibit CR-RCC-MX at small p and small r    | statsInText.do | 47           | Yes         |
-|                          |                                          |             |  | Figure 6       | stata/makeFigures3–7.do      | 143         | Yes         |  | p. 25 (fn 33): ~10% of observations at price list boundaries     | statsInText.do | 91           | Yes         |
-|                          |                                          |             |  | Figure 7       | stata/makeFigures3–7.do      | 222         | Yes         |  | p. 26 (fn 38): 26% of response patterns are intransitive         | statsInText.do | 104          | Yes         |
-|                          |                                          |             |  | Figure 8       | matlab/structuralEstimates.m | 313         | Yes         |  | p. 26 (fn 38): 1.9% average per intransitive pattern             | statsInText.do | 104          | Yes         |
-|                          |                                          |             |  | Figure 9       | matlab/makeFigure9.m         | 146         | Yes         |  | p. 26 (fn 38): Only 2 intransitive patterns exceed 3%            | statsInText.do | 104          | Yes         |
-|                          |                                          |             |  | Table A.1      | stata/makeAppendixTables.do  | 21          | Yes         |  | p. 27: 73% of simulated preferences in 4 strict patterns         | statsInText.do | 132          | Yes         |
-|                          |                                          |             |  | Table A.2      | stata/makeAppendixTables.do  | 69          | Yes         |  | p. 27: 44% of raw responses in 4 strict patterns                 | statsInText.do | 132          | Yes         |
-|                          |                                          |             |  | Table A.3      | stata/makeAppendixTables.do  | 92          | Yes         |  | p. 27: 8% of simulated preferences in 3 weak patterns            | statsInText.do | 132          | Yes         |
-|                          |                                          |             |  | Table A.4      | stata/makeAppendixTables.do  | 112         | Yes         |  | p. 27: 11% of raw responses in 3 weak patterns                   | statsInText.do | 132          | Yes         |
-|                          |                                          |             |  | Table A.5      | stata/makeAppendixTables.do  | 154         | Yes         |  | p. 27: 81% of simulated preferences in 7 marked patterns         | statsInText.do | 132          | Yes         |
-|                          |                                          |             |  | Table A.6      | stata/makeAppendixTables.do  | 178         | Yes         |  | p. 27: 55% of raw responses in 7 marked patterns                 | statsInText.do | 132          | Yes         |
-|                          |                                          |             |  | Table A.7      | stata/makeAppendixTables.do  | 207         | Yes         |  | p. 32: 19% of simulated preferences in other 6 patterns          | statsInText.do | 175          | Yes         |
-|                          |                                          |             |  | Table A.8      | stata/makeAppendixTables.do  | 290         | Yes         |  | p. 32: 18% of raw responses in other 6 transitive patterns       | statsInText.do | 175          | Yes         |
-|                          |                                          |             |  | Table A.9      | stata/makeAppendixTables.do  | 436         | Yes         |  | p. 33: ~13% of observations exhibit risk tolerance               | statsInText.do | 202          | Yes         |
-|                          |                                          |             |  | Figure A.1     | stata/makeAppendixFigures.do | 17          | Yes         |  | p. 33: 55% of risk-tolerant exhibit RCRP                         | statsInText.do | 202          | Yes         |
-|                          |                                          |             |  | Figure A.2     | stata/makeAppendixFigures.do | 70          | Yes         |  | p. 33: 87% of observations exhibit risk aversion                 | statsInText.do | 202          | Yes         |
-|                          |                                          |             |  | Figure A.3     | stata/makeAppendixFigures.do | 119         | Yes         |  | p. 33: 69% of risk-averse exhibit CRP                            | statsInText.do | 202          | Yes         |
-|                          |                                          |             |  | Figure A.4     | stata/makeAppendixFigures.do | 171         | Yes         |  | p. 33: Fisher p < 0.001 (Risk Aversion x CRP)                    | statsInText.do | 202          | Yes         |
-|                          |                                          |             |  | Figure A.5     | matlab/structuralEstimates.m | 350         | Yes         |  | p. 33: 48% of risk-tolerant exhibit P1                           | statsInText.do | 202          | Yes         |
-|                          |                                          |             |  | Table C.1      | stata/makeAppendixTables.do  | 509         | Yes         |  | p. 33: 21% of risk-averse exhibit P1                             | statsInText.do | 202          | Yes         |
-|                          |                                          |             |  | Figure C.1     | stata/makeAppendixFigures.do | 222         | Yes         |  | p. 33: Fisher p < 0.001 (Risk Aversion x P1)                     | statsInText.do | 202          | Yes         |
-|                          |                                          |             |  | Figure D.1     | R/makeFigureD1.R             | 7           | Yes         |  | p. 33: 69% of risk-averse exhibit P2/P3/P4                       | statsInText.do | 202          | Yes         |
-|                          |                                          |             |  | Table D.1      | R/makeTableD1.R              | 28          | Yes         |  | p. 33: 45% of risk-tolerant exhibit P2/P3/P4                     | statsInText.do | 202          | Yes         |
-|                          |                                          |             |  | Table D.2      | R/makeTableD2.R              | 27          | Yes         |  | p. 33: Fisher p < 0.001 (Risk Aversion x P2/P3/P4)               | statsInText.do | 202          | Yes         |
-|                          |                                          |             |  | Figure E.1     | matlab/makeFigureE1.m        | 65          | Yes         |  |                                                                  |                |              |             |
-|                          |                                          |             |  | Figure F.1     | matlab/structuralEstimates.m | 354         | Yes         |  |                                                                  |                |              |             |
-|                          |                                          |             |  | Figure F.2     | matlab/structuralEstimates.m | 350         | Yes         |  |                                                                  |                |              |             |
-|                          |                                          |             |  | Figure F.3     | matlab/structuralEstimates.m | 352         | Yes         |  |                                                                  |                |              |             |
-|                          |                                          |             |  | Table F.1      | matlab/structuralEstimates.m | 426         | Yes         |  |                                                                  |                |              |             |
-|                          |                                          |             |  | Figure G.1     | matlab/structuralEstimates.m | 813         | Yes         |  |                                                                  |                |              |             |
-|                          |                                          |             |  | Figure G.2     | matlab/structuralEstimates.m | 813         | Yes         |  |                                                                  |                |              |             |
-|                          |                                          |             |  | Figure G.3     | matlab/structuralEstimates.m | 813         | Yes         |  |                                                                  |                |              |             |
-|                          |                                          |             |  | Figure G.4     | matlab/structuralEstimates.m | 813         | Yes         |  |                                                                  |                |              |             |
-|                          |                                          |             |  | Figure G.5     | matlab/structuralEstimates.m | 813         | Yes         |  |                                                                  |                |              |             |
-|                          |                                          |             |  | Figure G.6     | matlab/structuralEstimates.m | 813         | Yes         |  |                                                                  |                |              |             |
-|                          |                                          |             |  | Table G.1      | matlab/structuralEstimates.m | 543         | Yes         |  |                                                                  |                |              |             |
+| Data Preparation Program | Dataset created                          | Reproduced? |
+|--------------------------|------------------------------------------|-------------|
+| clean_data.do            | cleaned-data/ExperimentData.dta and .csv |             |
+| clean_data.do            | cleaned-data/demographics.dta and .csv   |             |
+| clean_data.do            | cleaned-data/part1_cleaned.dta and .csv  |             |
+| clean_data.do            | cleaned-data/part2_cleaned.dta and .csv  |             |
+| clean_data.do            | cleaned-data/[dataset]_definitions.csv   |             |
 
-- Figure 1: No labels, output same (Image below):
-::: {#fig-three layout-ncol=2}
+| Figure/Table # | Program                      | Line Number | Reproduced? |
+|----------------|------------------------------|-------------|-------------|
+| Table 1        | Made by Authors              | N/A         | N/A         |
+| Table 2        | stata/makeTable2.do          | 91          | yes         |
+| Table 3        | Made by Authors              | N/A         | N/A         |
+| Figure 1       | matlab/makeFigure1.m         | 133         | yes         |
+| Figure 2       | Made by Authors              | N/A         | N/A         |
+| Figure 3       | stata/makeFigures3–7.do      | 16          | yes         |
+| Figure 4       | stata/makeFigures3–7.do      | 37          | yes         |
+| Figure 5       | stata/makeFigures3–7.do      | 64          | yes         |
+| Figure 6       | stata/makeFigures3–7.do      | 143         | yes         |
+| Figure 7       | stata/makeFigures3–7.do      | 222         | yes         |
+| Figure 8       | matlab/structuralEstimates.m | 313         | yes         |
+| Figure 9       | matlab/makeFigure9.m         | 146         | yes         |
+| Table A.1      | stata/makeAppendixTables.do  | 21          | yes         |
+| Table A.2      | stata/makeAppendixTables.do  | 69          | yes         |
+| Table A.3      | stata/makeAppendixTables.do  | 92          | yes         |
+| Table A.4      | stata/makeAppendixTables.do  | 112         | yes         |
+| Table A.5      | stata/makeAppendixTables.do  | 154         | yes         |
+| Table A.6      | stata/makeAppendixTables.do  | 178         | yes         |
+| Table A.7      | stata/makeAppendixTables.do  | 207         | yes         |
+| Table A.8      | stata/makeAppendixTables.do  | 290         | yes         |
+| Table A.9      | stata/makeAppendixTables.do  | 436         | yes         |
+| Figure A.1     | stata/makeAppendixFigures.do | 17          | yes         |
+| Figure A.2     | stata/makeAppendixFigures.do | 70          | yes         |
+| Figure A.3     | stata/makeAppendixFigures.do | 119         | yes         |
+| Figure A.4     | stata/makeAppendixFigures.do | 171         | yes         |
+| Figure A.5     | matlab/structuralEstimates.m | 350         | yes         |
+| Table C.1      | stata/makeAppendixTables.do  | 509         | yes         |
+| Figure C.1     | stata/makeAppendixFigures.do | 222         | yes         |
+| Figure D.1     | R/makeFigureD1.R             | 7           | yes         |
+| Table D.1      | R/makeTableD1.R              | 28          | yes         |
+| Table D.2      | R/makeTableD2.R              | 27          | yes         |
+| Figure E.1     | matlab/makeFigureE1.m        | 65          | yes         |
+| Figure F.1     | matlab/structuralEstimates.m | 354         | yes         |
+| Figure F.2     | matlab/structuralEstimates.m | 350         | yes         |
+| Figure F.3     | matlab/structuralEstimates.m | 352         | yes         |
+| Table F.1      | matlab/structuralEstimates.m | 426         | yes         |
+| Figure G.1     | matlab/structuralEstimates.m | 813         | yes         |
+| Figure G.2     | matlab/structuralEstimates.m | 813         | yes         |
+| Figure G.3     | matlab/structuralEstimates.m | 813         | yes         |
+| Figure G.4     | matlab/structuralEstimates.m | 813         | yes         |
+| Figure G.5     | matlab/structuralEstimates.m | 813         | yes         |
+| Figure G.6     | matlab/structuralEstimates.m | 813         | yes         |
+| Table G.1      | matlab/structuralEstimates.m | 543         | yes         |
 
-![Paper version](images/fig1_paper.png)
+| In-text claim                                                    | Program        | Line Number | Reproduced? |
+|------------------------------------------------------------------|----------------|-------------|-------------|
+| p. 11: 48 (34%) of 143 CR experiments use KT parameters          | statsInText.do | 20          | Yes         |
+| p. 11: 34 (42%) of 81 CC experiments use Allais parameters       | statsInText.do | 20          | Yes         |
+| p. 19: Average bonus payment $15.76                              | statsInText.do | 20          | Yes         |
+| p. 24: 21.0% of observations exhibit CR+CC                       | statsInText.do | 37          | Yes         |
+| p. 24: 14.6% exhibit modal pattern                               | statsInText.do | 47          | Yes         |
+| p. 24 (fn 31): 28.9% exhibit CR+CC near canonical parameters     | statsInText.do | 47          | Yes         |
+| p. 24 (fn 31): 13.9% exhibit CR-RCC-MX near canonical parameters | statsInText.do | 47          | Yes         |
+| p. 24 (fn 31): 21.4% exhibit CR-RCC-MX at small p and small r    | statsInText.do | 47          | Yes         |
+| p. 25 (fn 33): ~10% of observations at price list boundaries     | statsInText.do | 91          | Yes         |
+| p. 26 (fn 38): 26% of response patterns are intransitive         | statsInText.do | 104         | Yes         |
+| p. 26 (fn 38): 1.9% average per intransitive pattern             | statsInText.do | 104         | Yes         |
+| p. 26 (fn 38): Only 2 intransitive patterns exceed 3%            | statsInText.do | 104         | Yes         |
+| p. 27: 73% of simulated preferences in 4 strict patterns         | statsInText.do | 132         | Yes         |
+| p. 27: 44% of raw responses in 4 strict patterns                 | statsInText.do | 132         | Yes         |
+| p. 27: 8% of simulated preferences in 3 weak patterns            | statsInText.do | 132         | Yes         |
+| p. 27: 11% of raw responses in 3 weak patterns                   | statsInText.do | 132         | Yes         |
+| p. 27: 81% of simulated preferences in 7 marked patterns         | statsInText.do | 132         | Yes         |
+| p. 27: 55% of raw responses in 7 marked patterns                 | statsInText.do | 132         | Yes         |
+| p. 32: 19% of simulated preferences in other 6 patterns          | statsInText.do | 175         | Yes         |
+| p. 32: 18% of raw responses in other 6 transitive patterns       | statsInText.do | 175         | Yes         |
+| p. 33: ~13% of observations exhibit risk tolerance               | statsInText.do | 202         | Yes         |
+| p. 33: 55% of risk-tolerant exhibit RCRP                         | statsInText.do | 202         | Yes         |
+| p. 33: 87% of observations exhibit risk aversion                 | statsInText.do | 202         | Yes         |
+| p. 33: 69% of risk-averse exhibit CRP                            | statsInText.do | 202         | Yes         |
+| p. 33: Fisher p < 0.001 (Risk Aversion x CRP)                    | statsInText.do | 202         | Yes         |
+| p. 33: 48% of risk-tolerant exhibit P1                           | statsInText.do | 202         | Yes         |
+| p. 33: 21% of risk-averse exhibit P1                             | statsInText.do | 202         | Yes         |
+| p. 33: Fisher p < 0.001 (Risk Aversion x P1)                     | statsInText.do | 202         | Yes         |
+| p. 33: 69% of risk-averse exhibit P2/P3/P4                       | statsInText.do | 202         | Yes         |
+| p. 33: 45% of risk-tolerant exhibit P2/P3/P4                     | statsInText.do | 202         | Yes         |
+| p. 33: Fisher p < 0.001 (Risk Aversion x P2/P3/P4)               | statsInText.do | 202         | Yes         |
 
-![Replicated version](images/Figure1a.pdf)
-
-:::
-
+- Figure 1, 5 and 6: No labels, output same.
 - Figure 2: no program provided
-- Figure 3 - 5: match
-- Figure 6: No labels, output same (Image below):
-
-::: {#fig-three layout-ncol=2}
-
-![Paper version](images/fig6_paper.png)
-
-![Replicated version](images/Figure6.pdf)
-
-:::
-
 - Figure A1 - A3: same issue as Figure 6, image not provided for brevity
-- Figure A4: outputs match but file names are jumbled from the paper
 - Figure D1: slightly different from the paper (possibly computational differences). Comparison below:
 ::: {#fig-three layout-ncol=2}
 
@@ -359,6 +364,7 @@ Examples:
 :::
 
 - Tables D1 and D2 have slight mismatch between numbers when $p$ is high. Outputs are marked below:
+
 ::: {#fig-three layout-ncol=2}
 
 ![Paper version](images/tableD1_paper.png)
@@ -372,7 +378,6 @@ Examples:
 ![Paper version](images/tableD2_paper.png)
 
 ![Replicated version](images/tableD2_reproduced.png)
-
 :::
 
 - Other figures and tables match the reported output in the paper
@@ -391,7 +396,7 @@ Examples:
 ## Reason for incomplete reproducibility
 
 - [x] None.
-- [x] `Discrepancy in output` (either figures or numbers in tables or text differ)
+- [ ] `Discrepancy in output` (either figures or numbers in tables or text differ)
 - [ ] `Bugs in code` that were fixable by the replicator (but should be fixed in the final deposit)
 - [ ] `Code missing`, in particular if it prevented the replicator from completing the reproducibility check
   - [ ] `Data preparation code missing` should be checked if the code missing seems to be data preparation code
@@ -400,4 +405,4 @@ Examples:
 - [ ] `Insufficient time available to replicator` is applicable when (a) running the code would take weeks or more (b) running the code might take less time if sufficient compute resources were to be brought to bear, but no such resources can be accessed in a timely fashion (c) the replication package is very complex, and following all (manual and scripted) steps would take too long.
 - [ ] `Data missing` is marked when data *should* be available, but was erroneously not provided, or is not accessible via the procedures described in the replication package
 - [ ] `Data not available` is marked when data requires additional access steps, for instance purchase or application procedure. 
-- [x] `Missing README` is marked if there is no README to guide the replicator, or the README is not in compliance with JPE requirements
+- [ ] `Missing README` is marked if there is no README to guide the replicator, or the README is not in compliance with JPE requirements
