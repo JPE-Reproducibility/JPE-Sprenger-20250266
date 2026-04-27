@@ -355,6 +355,7 @@ global dir "/files/JPE-Sprenger-20250266/replication-package/replication_filesv2
 - Figure 2: no program provided
 - Figure A1 - A3: same issue as Figure 6, image not provided for brevity
 - Figure D1: slightly different from the paper (possibly computational differences). Comparison below:
+  
 ::: {#fig-three layout-ncol=2}
 
 ![Paper version](images/figD1_paper.png)
@@ -365,7 +366,7 @@ global dir "/files/JPE-Sprenger-20250266/replication-package/replication_filesv2
 
 - Tables D1 and D2 have slight mismatch between numbers when $p$ is high. Outputs are marked below:
 
-::: {#fig-three layout-ncol=2}
+::: {#fig-four layout-ncol=2}
 
 ![Paper version](images/tableD1_paper.png)
 
@@ -373,7 +374,7 @@ global dir "/files/JPE-Sprenger-20250266/replication-package/replication_filesv2
 
 :::
 
-::: {#fig-three layout-ncol=2}
+::: {#fig-five layout-ncol=2}
 
 ![Paper version](images/tableD2_paper.png)
 
